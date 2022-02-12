@@ -1,0 +1,6 @@
+f(x,y)= a*(x) + b*(y) + z0/1.e6
+a=1;b=1;z0=0
+fit f(x,y) "3dplot.data" using 1:2:3:($4) via a,b, z0
+set print "3dplot.params"
+print a,b,z0/1.e6
+#splot "3dplot.data" using 1:2:3 w l, f(x,y) w l
